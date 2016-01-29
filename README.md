@@ -59,7 +59,7 @@ without SSL, so that can perform packet captures when debugging LDAP code.
 
 Authenticating to a server is called “binding” in LDAP terminology.  To handle
 a login request, your application will typically bind first as an administrative
-user (aka service account), then search for DN the user wishing to login.  If a
+user (aka service account), then search for DN of the user wishing to login.  If a
 matching DN is found, you can then perform a second bind operation with the users
 DN and the password they provided.
 
@@ -71,7 +71,7 @@ Searching
 A user search should start at the configured user_search_base as a full subtree
 search.  If searching by username, the LDAP filter should be:
 
-    (&(objectclass=${user_class})(${user_name_attrib}=<username>))
+    (&(objectclass=${user_class})(${user_name_attrib}=${username}))
 
 After variable expansion, this filter might look like:
 
